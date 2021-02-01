@@ -13,7 +13,7 @@
 
 (https://drive.google.com/drive/folders/1mak3fOojSJhwfHLNnfRCnFtx_nUON9Ky?usp=sharing)
 
-Markup : 1. Setup and Requirements:
+          1. Setup and Requirements:
               1. IDE : Inteliji
               2. JDK Version Used on the Project (v8) , it's a must to use this version otherwise you will receive problem with mysql connector
               (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
