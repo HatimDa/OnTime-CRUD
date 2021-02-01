@@ -2,7 +2,7 @@
 
 ---
 
-#### Setup and Requirements:
+### Setup and Requirements:
 
 1. IDE : Inteliji
 2. 👇🏽 JDK Version Used on the Project (v8) , it's a must to use this version otherwise you will receive problem with mysql connector 
@@ -15,7 +15,7 @@
 
 ---
 
-#### Architecture:
+### Architecture:
 
 - The decision behind using Hibernate Framework because it will save us a lot of time and lines of code for mapping our DB to the Java Code it will minimise the amount of sql code we should write to insert or retrieve an object from the db.
 
