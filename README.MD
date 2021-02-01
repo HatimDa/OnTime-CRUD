@@ -4,13 +4,12 @@
 
 #### Setup and Requirements:
 
-- IDE : Inteliji
-
-- 👇🏽 JDK Version Used on the Project (v8) , it's a must to use this version otherwise you will receive problem with mysql connector 
+1. IDE : Inteliji
+2. 👇🏽 JDK Version Used on the Project (v8) , it's a must to use this version otherwise you will receive problem with mysql connector 
 
 (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
-- 👇🏽 Hibernate Library + MySQL Connector 
+3. 👇🏽 Hibernate Library + MySQL Connector 
 
 (https://drive.google.com/drive/folders/1mak3fOojSJhwfHLNnfRCnFtx_nUON9Ky?usp=sharing)
 
