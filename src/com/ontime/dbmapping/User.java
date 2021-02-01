@@ -9,7 +9,9 @@ import javax.persistence.*;
  * Anotating Java Class
  */
 public class User {
+    public static void main(String[] args) {
 
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
