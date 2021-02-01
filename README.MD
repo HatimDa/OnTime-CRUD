@@ -35,7 +35,7 @@ We tell hibernate how our Java Class or Object maps to the Data inside the Datab
 ---
 
 - All the CRUD functionalities are on the package "com.ontime.crudoperations"
-- The Mapping on the other hand is on "com.ontime.dbmapping" only for the User table the others are on the way.
+- The Mapping on the other hand is on "com.ontime.dbmapping" only for the User table ,the others are on the way.
 
 ![Mapping](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d42f56af-ab3d-4f5d-b4ce-d44f2e5bfc1e/Screenshot_2021-02-01_at_03.17.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210201T021740Z&X-Amz-Expires=86400&X-Amz-Signature=281db690f5795c5bcc51c3af6dca7c34b9530230bcbdbdde9436e48b51f18fc7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot_2021-02-01_at_03.17.11.png%22)
 
