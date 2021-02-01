@@ -32,4 +32,4 @@ We tell hibernate how our Java Class or Object maps to the Data inside the Datab
 
 ![EER Diagram for the Time Scheduler](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/326f92d0-3326-4b71-9241-c163bf537c61/Screenshot_2021-02-01_at_02.37.51.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210201T020026Z&X-Amz-Expires=86400&X-Amz-Signature=86f68128d053bdf90678a490d0846c6d3faf2f3d727240a8b5e7831b8f9d6226&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot_2021-02-01_at_02.37.51.png%22)
 
-## PS: The code is not finished yet but I will be working on it today and tomorrow.
+## PS: 👋🏻 The code is not finished yet but I will be working on it today and tomorrow.
