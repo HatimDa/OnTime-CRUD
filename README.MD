@@ -30,7 +30,7 @@ We tell hibernate how our Java Class or Object maps to the Data inside the Datab
 
 - All Tables should be mapped to the Database to perform the CRUD Functionalities - (EER Diagram)
 
-![EER Diagram for the Time Scheduler](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/326f92d0-3326-4b71-9241-c163bf537c61/Screenshot_2021-02-01_at_02.37.51.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210201T020026Z&X-Amz-Expires=86400&X-Amz-Signature=86f68128d053bdf90678a490d0846c6d3faf2f3d727240a8b5e7831b8f9d6226&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot_2021-02-01_at_02.37.51.png%22)
+![EER Diagram for the Time Scheduler](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3fc125f4-e83d-4576-ac96-30e3854cd6cf/EER_Diagram.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210202T235959Z&X-Amz-Expires=86400&X-Amz-Signature=7bda927ff7bffabfd83171082d4262cebc21573e588dcf586386cb6bb5724e75&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22EER_Diagram.png%22)
 
 ---
 
