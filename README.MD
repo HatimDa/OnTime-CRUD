@@ -5,9 +5,8 @@
 ### Setup and Requirements:
 
 1. IDE : Inteliji
-2. 👇🏽 JDK Version Used on the Project (v8) , it's a must to use this version otherwise you will receive problem with mysql connector 
+2. JDK Version Used on the Project (v15) , it's a must to use this version otherwise you will receive problem with mysql connector 
 
-(https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 
 3. 👇🏽 Hibernate Library + MySQL Connector 
 
@@ -30,7 +29,7 @@ We tell hibernate how our Java Class or Object maps to the Data inside the Datab
 
 - All Tables should be mapped to the Database to perform the CRUD Functionalities - (EER Diagram)
 
-![EER Diagram for the Time Scheduler](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3fc125f4-e83d-4576-ac96-30e3854cd6cf/EER_Diagram.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210202T235959Z&X-Amz-Expires=86400&X-Amz-Signature=7bda927ff7bffabfd83171082d4262cebc21573e588dcf586386cb6bb5724e75&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22EER_Diagram.png%22)
+![EER Diagram for the Time Scheduler](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7b7e11aa-e577-4d1f-b410-73e40ad94c33/Screenshot_2021-02-04_at_23.49.26.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210204T225028Z&X-Amz-Expires=86400&X-Amz-Signature=bfcfeef3fb90b3135c71a1c758f23fab432a12a7d798bec2a26c5e8033e139f3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot_2021-02-04_at_23.49.26.png%22)
 
 ---
 
@@ -39,4 +38,3 @@ We tell hibernate how our Java Class or Object maps to the Data inside the Datab
 
 ![Mapping](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d42f56af-ab3d-4f5d-b4ce-d44f2e5bfc1e/Screenshot_2021-02-01_at_03.17.11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210201T021740Z&X-Amz-Expires=86400&X-Amz-Signature=281db690f5795c5bcc51c3af6dca7c34b9530230bcbdbdde9436e48b51f18fc7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot_2021-02-01_at_03.17.11.png%22)
 
-## PS: 👋🏻 The code is not finished yet but I will be working on it today and tomorrow.
