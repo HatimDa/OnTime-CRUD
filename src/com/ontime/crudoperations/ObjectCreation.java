@@ -3,34 +3,26 @@ package com.ontime.crudoperations;
 import com.ontime.dbmapping.Event;
 import com.ontime.dbmapping.EventPriority;
 import com.ontime.dbmapping.EventReminder;
-import org.apache.commons.io.IOUtils;
-import org.hibernate.Hibernate;
+import com.ontime.dbmapping.EventUser;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.ontime.dbmapping.EventOrganizer;
-import org.hibernate.engine.jdbc.BlobProxy;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Timestamp;
-import java.util.Date;
+import java.util.Calendar;
+import java.util.List;
 
 
 public class ObjectCreation {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         // create session factory
         SessionFactory factory = new Configuration()
                 .configure("dbconfig.cfg.xml")
-                .addAnnotatedClass(EventOrganizer.class)
+                .addAnnotatedClass(EventUser.class)
                 .addAnnotatedClass(Event.class)
                 .addAnnotatedClass(EventPriority.class)
                 .addAnnotatedClass(EventReminder.class)
@@ -45,53 +37,89 @@ public class ObjectCreation {
             // start a transaction
             session.beginTransaction();
 
+
+
+/*
             // create user
-            EventOrganizer tmpUser = new EventOrganizer("Timo", "1q2w3e4r45trz6",
-                    "Timo Bend", "timodend@gmail.com");
+            EventUser tmpUser1 = new EventUser("Tim", "1q2w3e4rfr45trz6",
+                    "Timo Bend", "timd@gmail.com");
+            EventUser tmpUser2 = new EventUser("Cami", "1q2w3ede3trz6",
+                    "Timo Bend", "Cami@gmail.com");
+            EventUser tmpUser3 = new EventUser("Nimo", "dejnfesfisufh3",
+                    "Timo Bend", "Nimo@gmail.com");
+            EventUser tmpUser4 = new EventUser("Numi", "feb4ui38djnkeiw",
+                    "Timo Bend", "Numi@gmail.com");
+            EventUser tmpUser5 = new EventUser("Cayak", "esuih53ee3r",
+                    "Timo Bend", "Cayak@gmail.com");
+            EventUser tmpUser6 = new EventUser("Nawal", "384r487r94",
+                    "Timo Bend", "Nawal@gmail.com");
+*/
 
 
-            System.out.println("\nSaving the User ...");
-            session.save(tmpUser);
-            System.out.println(tmpUser);
 
-            // add event
-            InputStream inputStream = this.getClass()
-                    .getClassLoader()
-                    .getResourceAsStream("../pdfs/test.png");
 
-            if (inputStream == null) {
-                System.out.println("error");
-            }
-
-            Event tmpEvent = new Event();
+           Event tmpEvent = new Event();
             tmpEvent.setEventName("Doctor Appointment");
             tmpEvent.setEventDuration("90min");
             tmpEvent.setEventAddress("Jügelstr. 1, 60320, Frankfurt am Main");
-            tmpEvent.setEventDate(new Date(2021, 10, 11));
-            tmpEvent.setEventAttachment(IOUtils.toByteArray(inputStream));
-            tmpEvent.setEventPriority(1);
-//            tmpEvent.setEventReminder(1);
+            Calendar c = Calendar.getInstance();
+            c.set(2021, 10, 17,13,30,0);
+            tmpEvent.setEventDate(c.getTime());
+
+
+            File file = new File("pdfs/test.pdf");
+            byte[] eventAttachment = new byte[(int) file.length()];
+
+
+            try {
+                FileInputStream fileInputStream = new FileInputStream(file);
+                fileInputStream.read(eventAttachment);
+                fileInputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            tmpEvent.setEventAttachment(eventAttachment);
+
+            EventPriority ep = new EventPriority(2,"medium");
+
+            EventUser eu = new EventUser(1);
+
+            EventReminder er = new EventReminder(2);
+
+            tmpEvent.setEventPriority(ep);
+            tmpEvent.setEventUser(eu);
+            tmpEvent.setEventReminder(er);
+
 
 
             System.out.println("\nSaving the Event ...");
+
             session.save(tmpEvent);
-            System.out.println(tmpEvent);
 
-            // add user to the event
-
-
-            // save the user and leverage cascade all
+/*            session.save(tmpUser1);    //Save the data
+            session.save(tmpUser2);
+            session.save(tmpUser3);
+            session.save(tmpUser4);
+            session.save(tmpUser5);
+            session.save(tmpUser6);*/
 
             // commit transaction
             session.getTransaction().commit();
 
             System.out.println("Done saving the User and  into the DB ...");
 
-        } catch (Exception e) {
-            System.out.println("Exception a3mmi " + e.getMessage());
+
         } finally {
             session.close();
             factory.close();
+        }
+    }
+
+    private static void displayUsers(List<EventUser> theUsers) {
+        // Display Users
+        for (EventUser tmpUser : theUsers){
+            System.out.println(tmpUser);
         }
     }
 

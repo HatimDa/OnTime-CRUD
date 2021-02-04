@@ -1,15 +1,7 @@
 package com.ontime.dbmapping;
 
-import com.mysql.jdbc.NonRegisteringDriver;
-
 import javax.persistence.*;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Blob;
-import java.sql.Timestamp;
-import java.util.Arrays;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -19,7 +11,7 @@ import java.util.Date;
 @Entity
 @Table(name = "event")
 
-public class Event {
+public class Event implements Serializable {
 
     /**
      * Mapping each column from "event table" into it's proper variable in Event class
@@ -40,7 +32,6 @@ public class Event {
 
 
     @Column(name = "event_date", columnDefinition = "DATETIME")
-    @Temporal(value = TemporalType.TIMESTAMP)
     private Date eventDate;
 
     @Lob
@@ -54,27 +45,7 @@ public class Event {
      */
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "event_priority_id", columnDefinition = "INT(11)")
-    private int eventPriority;
-
-
-    /**
-     * Gets event priority.
-     *
-     * @return the event priority
-     */
-    public int getEventPriority() {
-        return eventPriority;
-    }
-
-    /**
-     * Sets event priority.
-     *
-     * @param eventPriority the event priority
-     */
-    public void setEventPriority(int eventPriority) {
-        this.eventPriority = eventPriority;
-    }
-
+    private EventPriority eventPriority;
 
     /**
      * Specify (n-1) relationship between "event" table and "event_organizer" table.
@@ -82,26 +53,8 @@ public class Event {
      * Join the FK "event_organizer_id" in "event" table with the PK "id" in "event_organizer" table.
      */
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "event_organizer_id", columnDefinition = "INT(11)")
-    private EventOrganizer eventOrganizer;
-
-    /**
-     * Gets event organizer.
-     *
-     * @return the event organizer
-     */
-    public EventOrganizer getEventOrganizer() {
-        return eventOrganizer;
-    }
-
-    /**
-     * Sets event organizer.
-     *
-     * @param eventOrganizer the event organizer
-     */
-    public void setEventOrganizer(EventOrganizer eventOrganizer) {
-        this.eventOrganizer = eventOrganizer;
-    }
+    @JoinColumn(name = "event_user_id", columnDefinition = "INT(11)")
+    private EventUser eventUser;
 
 
     /**
@@ -113,23 +66,6 @@ public class Event {
     @JoinColumn(name = "event_reminder_id", columnDefinition = "INT(11)")
     private EventReminder eventReminder;
 
-    /**
-     * Gets event reminder.
-     *
-     * @return the event reminder
-     */
-    public EventReminder getEventReminder() {
-        return eventReminder;
-    }
-
-    /**
-     * Sets event reminder.
-     *
-     * @param eventReminder the event reminder
-     */
-    public void setEventReminder(EventReminder eventReminder) {
-        this.eventReminder = eventReminder;
-    }
 
 
     /**
@@ -163,10 +99,69 @@ public class Event {
         this.eventDuration = eventDuration;
         this.eventAddress = eventAddress;
         this.eventDate = eventDate;
-        this.eventDate = eventDate;
         this.eventAttachment = eventAttachment;
     }
 
+
+    /**
+     * Gets event priority.
+     *
+     * @return the event priority
+     */
+    public EventPriority getEventPriority() {
+        return eventPriority;
+    }
+
+    /**
+     * Sets event priority.
+     *
+     * @param eventPriority the event priority
+     */
+    public void setEventPriority(EventPriority eventPriority) {
+        this.eventPriority = eventPriority;
+    }
+
+    /**
+     * Gets event user.
+     *
+     * @return the event user
+     */
+    public EventUser getEventUser() {
+        return eventUser;
+    }
+
+    /**
+     * Sets event user.
+     *
+     * @param eventUser the event user
+     */
+    public void setEventUser(EventUser eventUser) {
+        this.eventUser = eventUser;
+    }
+
+    /**
+     * Gets event reminder.
+     *
+     * @return the event reminder
+     */
+    public EventReminder getEventReminder() {
+        return eventReminder;
+    }
+
+    /**
+     * Sets event reminder.
+     *
+     * @param eventReminder the event reminder
+     */
+    public void setEventReminder(EventReminder eventReminder) {
+        this.eventReminder = eventReminder;
+    }
+
+
+
+    /**
+     * Instantiates a new Event.
+     */
     public Event() {
 
     }
@@ -269,7 +264,6 @@ public class Event {
      *
      * @return the byte [ ]
      */
-
     public byte[] getEventAttachment() {
 
         return eventAttachment;
@@ -281,7 +275,6 @@ public class Event {
      *
      * @param eventAttachment the event attachment
      */
-
     public void setEventAttachment(byte[] eventAttachment) {
         this.eventAttachment = eventAttachment;
     }

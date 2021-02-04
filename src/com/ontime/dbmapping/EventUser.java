@@ -8,12 +8,12 @@ import java.util.List;
  * The type Event organizer.
  */
 @Entity
-@Table(name = "event_organizer")
+@Table(name = "event_user")
 
 /*
  * Annotating Java Class
  */
-public class EventOrganizer {
+public class EventUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,13 +32,17 @@ public class EventOrganizer {
     @Column(name = "user_email")
     private String userEmail;
 
+    public EventUser() {
+        
+    }
+
     /**
      * We reference the events from Event table in our Database that we can use in the constructor.
      * Control the cascading from the "event_organizer" table to "event" table.
      * And add the OneToMany annotation to map the "event_organizer" property in Event Class.
      */
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "eventOrganizer",
-            cascade = {CascadeType.ALL})
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "event_user_id")
     private List<Event> events;
 
     /**
@@ -68,14 +72,17 @@ public class EventOrganizer {
      * @param fullName     the full name
      * @param userEmail    the user email
      */
-    public EventOrganizer(String userName, String userPassword, String fullName,
-                          String userEmail) {
+    public EventUser(String userName, String userPassword, String fullName,
+                     String userEmail) {
         this.userName = userName;
         this.userPassword = userPassword;
         this.fullName = fullName;
         this.userEmail = userEmail;
     }
 
+    public EventUser(int id){
+        this.id = id;
+    }
     /**
      * Gets id.
      *
